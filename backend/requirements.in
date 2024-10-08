@@ -1,0 +1,5 @@
+pymongo
+fastapi
+uvicorn
+loguru
+pydantic-settings

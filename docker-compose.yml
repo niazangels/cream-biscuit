@@ -1,0 +1,55 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: backend
+    volumes:
+      - ./backend/app:/app
+      - ./data:/data
+    depends_on:
+      - mongodb
+    ports:
+      - 8000:80
+    restart: unless-stopped
+    env_file:
+      - .env
+    command:
+      [
+        "uvicorn",
+        "app.main:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "80",
+        "--workers",
+        "2",
+        "--reload",
+      ]
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: frontend
+    ports:
+      - 5173:5173
+    volumes:
+      - ./frontend/app/:/app
+      - /app/node_modules
+    env_file:
+      - .env
+    restart: unless-stopped
+
+  mongodb:
+    image: mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    command: mongod --quiet --logpath /dev/null
+
+networks:
+  default:
+    name: project-network
+
+ 
