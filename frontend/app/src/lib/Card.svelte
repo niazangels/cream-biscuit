@@ -7,6 +7,10 @@
     <img class="hero" src={image} alt={props.name} />
     <div class="content">
         <h3>{props.organization}</h3>
+        <div class="tags">
+            <span class="tag">{props.category}</span>
+            <span class="tag">{props.technology}</span>
+        </div>
         <p>{props.company_description}</p>
         <a href={`/organizations/${props.ticket_num}`} class="btn">
             View Details
@@ -23,12 +27,24 @@
         background-color: #fff;
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
         overflow: hidden;
-        height: 400px;
+        // height: 400px;
 
         .content {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+        }
+
+        .tags {
+            display: flex;
+            gap: 10px;
+            .tag{
+                padding: 0 6px;
+                border-radius: 5px;
+                font-size: 12px;
+                color: #222;
+            background-color: #d7d7d7;
+            }
         }
 
         img.hero {

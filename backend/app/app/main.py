@@ -16,8 +16,9 @@ def read_root():
 
 @app.get("/search/organizations")
 def search_organizations(search_text: str):
-    matching_organizations = df[df['organization'].str.contains(search_text, case=False, na=False)]
-    return matching_organizations[['organization', 'company_description']].to_dict(orient="records")
+    result = df[df['organization'].str.contains(search_text, case=False, na=False)]
+    result = result.fillna('')
+    return result.to_dict(orient="records")
 
 
 @app.get("/organizations", response_model=list[dict])
@@ -27,6 +28,7 @@ def get_organizations():
 @app.get("/organizations/{ticket_num}", response_model=dict)
 def get_organizations_by_ticket_num(ticket_num: str):
     result = df[df['ticket_num'] == ticket_num].to_dict(orient="records")
+    
     if len(result) == 0:
         raise HTTPException(status_code=404, detail="Organization not found")
     return result[0]

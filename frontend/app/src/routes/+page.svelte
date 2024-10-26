@@ -4,9 +4,9 @@
 	let ticketId = $state('vmYkMulO3r');
 	let similarStartups = $state([]);
 
-	async function getSimilarStartups() {
+	async function searchStartups() {
 		const response = await fetch(
-			`http://localhost:42000/organizations/${ticketId}/similar`
+			`http://localhost:42000/search/organizations?search_text=${ticketId}`
 		)
 			.then((res) => res.json())
 			.then((data) => {
@@ -22,7 +22,7 @@
 
 <h1>Huddle RecSys</h1>
 
-<form onsubmit={getSimilarStartups}>
+<form onsubmit={searchStartups}>
 	<input type="text" bind:value={ticketId} />
 	<button type="submit" class="btn">Get Similar Startups</button>
 </form>
