@@ -9,3 +9,8 @@ It is designed to be a starting point for a new project.
 - Python 3.12 / FastAPI
 - Sveltekit 2.0
 - Docker
+
+
+## TODO:
+- bootstrap
+- scss
