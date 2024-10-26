@@ -4,4 +4,6 @@
   import "$lib/styles/main.scss";
 </script>
 
-<slot></slot>
+<div class="container">
+  <slot/>
+</div>
