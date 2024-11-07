@@ -3,7 +3,7 @@
 data/
 .DS_Store
 .vs_code/
-
+tmp/
 
 # Python
 
