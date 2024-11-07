@@ -6,7 +6,7 @@ const config = {
 	preprocess: sveltePreprocess({
 		// ...svelte-preprocess options
 		scss: {
-			prependData: `@use './src/lib/styles/main.scss';`
+			// prependData: `@import './src/lib/styles/main.scss';`
 		}
 	}),
 	kit: {

@@ -1,15 +1,17 @@
 <script>
     let props = $props();
     const image = `https://picsum.photos/seed/${props.name}/300/300`;
+    const image2 = `https://api.dicebear.com/9.x/rings/svg?seed=${props.organization}`
 </script>
 
 <div class="card">
-    <img class="hero" src={image} alt={props.name} />
+    <img class="hero" src={image2} alt={props.name} />
     <div class="content">
         <h3>{props.organization}</h3>
         <div class="tags">
             <span class="tag">{props.category}</span>
             <span class="tag">{props.technology}</span>
+            <span class="tag">{props.sector}</span>
         </div>
         <p>{props.company_description}</p>
         <a href={`/organizations/${props.ticket_num}`} class="btn">
