@@ -6,11 +6,17 @@
 $color_primary: hsl(345, 89%, 56%);
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Outfit:wght@600&display=swap');
+
+html{
+    font-size: 62.5%;
+}
 body {
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+    font-size: 1.4rem;
+
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -18,9 +24,6 @@ h1, h2, h3, h4, h5, h6 {
     font-optical-sizing: auto;
     font-weight: 600;
     font-style: normal;
-}
-h2 {
-    margin-top: 20px;
 }
 
 .rec-results {
@@ -30,14 +33,67 @@ h2 {
 }
 
 .btn {
-    padding: 10px;
     border: none;
     background-color: $color_primary;
     color: #fff;
     text-decoration: none;
     cursor: pointer;
     text-align: center;
+    transition: all 0.3s ease-out;
 }
 header {
     background-color: $color_primary;
+}
+
+.two-col-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.btn-secondary{
+    background-color: transparent;
+    border: 2px solid #32B4D0;
+    color: #222;
+    border-radius: 8px;
+}
+
+input[type="text"]{
+    border: 1px solid #fff;
+    // border-radius: 8px;
+    border-radius: 500px;;
+    padding: 1rem;
+    width: 100%;
+}
+
+select{
+    width: 100%;
+    padding: 1rem;
+    background-color: #fefefe;
+    border: 1px solid #fff ;
+    border-radius: 8px;
+}
+
+.section-header{
+    color: #b4b4b4;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: normal;
+    letter-spacing: 0.1rem;
+    margin-block: 2.5rem 1rem;
+}
+
+.pill {
+    background-color: #eee;
+    text-align: center;
+    border-radius: 8px;
+    padding: 0.1rem 0.5rem;
+    margin-inline: 0.2rem;
+    min-width: 40px;
+    display: inline-block;
+    cursor: pointer;
+    &.active {
+        background-color: #303030;
+        color: #fff;
+    }
 }
