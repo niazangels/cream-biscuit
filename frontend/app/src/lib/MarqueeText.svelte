@@ -1,53 +1,44 @@
-<!-- <script>
-	import HuddleStartups from '$lib/_data/huddle_startups';
-	const shuffled = HuddleStartups.sort(() => Math.random() - 0.5);
+<script>
+    import { onMount } from 'svelte';
+    
+    export let text;
+    
+    let marquee;
+
+	function Marquee(selector, speed) {
+		const parentSelector = selector;
+		const clone = parentSelector.innerHTML;
+		const firstElement = parentSelector.children[0];
+		let i = 0;
+		parentSelector.insertAdjacentHTML('beforeend', clone);
+		parentSelector.insertAdjacentHTML('beforeend', clone);
+
+		setInterval(function () {
+			firstElement.style.marginLeft = `-${i}px`;
+			if (i > firstElement.clientWidth) {
+				i = 0;
+			}
+			i = i + speed;
+		}, 0);
+	}
+
+    onMount(() => {
+        Marquee(marquee, .1);
+    });
 </script>
 
-<div class="wrapper">
-	<div class="marquee">
-		<p>
-			{#each shuffled.slice(0, 10) as startup}
-				<span>{startup.organization} &centerdot; </span>
-
-			{/each}
-		</p>
-		
-        <p>
-			{#each shuffled as startup}
-				<span>{startup.organization}</span>
-			{/each}
-		</p>
-		
-	</div>
+<div class="marquee" bind:this={marquee}>
+	<span>{text}</span>
 </div>
 
-<style lang="scss">
-	.wrapper {
-		max-width: 100%;
-		overflow: hidden;
-	}
 
-	.marquee {
-		white-space: nowrap;
-		overflow: hidden;
-		display: inline-block;
-		animation: marquee 1600s linear infinite;
-	}
+<style>
+    .marquee {
+  overflow: hidden;
+  display: flex;
+}
 
-	.marquee p {
-		display: inline-block;
-		span {
-			margin-right: 10px;
-		}
-	}
-
-
-	@keyframes marquee {
-		0% {
-			transform: translate3d(0, 0, 0);
-		}
-		100% {
-			transform: translate3d(-50%, 0, 0);
-		}
-	}
-</style> -->
+.marquee span{
+    white-space: nowrap;
+}
+</style>

@@ -5,7 +5,7 @@
 	const { data } = $props();
 	const person = data.person;
 	const organization = data.organization;
-	const people = data.people;
+	const also_from_organization = data.also_from_organization;
 	const similar_people = data.similar_people;
 	const image_size = 120;
 </script>
@@ -22,9 +22,7 @@
 	<div class="info">
 		<h3>{person.name}</h3>
 		<p>{person.designation}</p>
-		{#if person.organization}
 			<p>@{person.organization}</p>
-		{/if}
 	</div>
 </div>
 
@@ -34,21 +32,21 @@
 {#if organization}
 	<h2 class="section-header">Organization</h2>
 	<StartupCard
-		name={organization.organization}
-		description={organization.company_description}
+		name={person.organization}
+		description={person.company_description}
 		image={organization.image}
-		technology={organization.technology}
-		domain={organization.sector}
-		ticket_num={organization.ticket_num}
+		technology={person.technology}
+		domain={person.sector}
+		ticket_num={person.ticket_num}
 	/>
 
-	<h2 class="section-header">Others from {organization.organization.split(' ')[0]}</h2>
-	{#if people}
-		{#each people as person}
+	<h2 class="section-header">Others from {organization.split(' ')[0]}</h2>
+	{#if also_from_organization.length > 0}
+		{#each also_from_organization as person}
 			<PersonCard {person} />
 		{/each}
 	{:else}
-		<p>No one else from {organization.organization} at Huddle.</p>
+		<p>No one else is from this organization at Huddle.</p>
 	{/if}
 {/if}
 
@@ -61,7 +59,7 @@
 	<p>No similar people found.</p>
 {/if}
 
-{JSON.stringify(person)}
+<!-- {JSON.stringify(person)} -->
 <!-- 
 <br />
 <br />

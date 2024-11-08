@@ -3,6 +3,7 @@
 	import SingleRowButton from '$lib/SingleRowButton.svelte';
 	import PersonCard from '$lib/PersonCard.svelte';
 	import SimilarStartups from '$lib/SimilarStartups.svelte';
+	import StartupHeader2 from '$lib/StartupHeader2.svelte';
 
 	const { data } = $props();
 	const startup = data.startup;
@@ -11,12 +12,18 @@
 	const other_startups = data.other_startups;
 </script>
 
+<StartupHeader2		ticket_num={startup.ticket_num}
+company_name={startup.organization}
+sector={startup.sector}
+technology={startup.technology}
+ />
+<!-- 
 <StartupHeader
 	ticket_num={startup.ticket_num}
 	company_name={startup.organization}
 	sector={startup.sector}
 	technology={startup.technology}
-/>
+/> -->
 
 <SingleRowButton text="Website" href={startup.website} />
 

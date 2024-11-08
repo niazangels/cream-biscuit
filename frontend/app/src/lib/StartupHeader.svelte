@@ -18,10 +18,6 @@ const image_size = 80;
         </div>
     </div>
 
-    <div class="buttons">
-        <div class="btn">All events</div>
-        <div class="btn">My events</div>
-    </div>
 </div>
 
 <style lang="scss">

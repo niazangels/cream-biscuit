@@ -33,5 +33,8 @@
         background-color: transparent;
         border: 2px solid #0b8fe2;
         color: #0b8fe2;
+        
+        border: 2px solid #ccc;
+        color: #838383;
     }
 </style>

@@ -11,12 +11,11 @@
 <div class="container">
   <slot/>
 </div>
-
 <Footer />
 <style lang="scss">
   .container{
 		padding-inline: 1rem;
 		overflow-x: hidden;
-    background-color: #f5f6f7;
+    // background-color: #f5f6f7;
 	}
 </style>

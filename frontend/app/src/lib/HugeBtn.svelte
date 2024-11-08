@@ -7,7 +7,7 @@
 <a href={href}>
     <div class="huge-btn">
         <img src={icon} alt="QR Code Icon" />
-        {text}
+        <span>{text}</span>
     </div>
 </a>
 
@@ -19,15 +19,22 @@
         align-items: center;
         justify-content: center;
         gap: 1rem;
-        background-color: #eee;
-        // background: #FAF6ED;i
+        background-color: #f3f3f3;
+        // border: 1px solid #eee;
         border-radius: 8px;
         height: 100px;  
         width: 100%;
+        // background-color: hsl(0, 0%, 32%);
+        // color: #fbfbfb;
 
         img{
-            width: 24px;
-            height: 24px;
+            width: 56px;
+            height: 56px;
+        }
+        span{
+            font-size: 1rem;
+            letter-spacing: 0.1rem;
+            text-transform: uppercase;
         }
     }
     a{

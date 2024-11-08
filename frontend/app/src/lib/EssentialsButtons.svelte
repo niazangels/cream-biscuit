@@ -4,8 +4,8 @@
 </script>
 
 <div class="essentials-buttons">
-    <a href="/my-ticket" class="btn"> <img src={TicketIcon} alt="Ticket Icon" /> My Ticket</a>
-    <a href="/qr-scanner" class="btn"> <img src={QRCodeIcon} alt="QR Scanner Icon" /> QR Scanner</a>
+    <a href="/ticket" class="btn"> <img src={TicketIcon} alt="Ticket Icon" /> My Ticket</a>
+    <a href="/" class="btn"> <img src={QRCodeIcon} alt="QR Scanner Icon" /> QR Scanner</a>
 </div>
 
 <style lang="scss">

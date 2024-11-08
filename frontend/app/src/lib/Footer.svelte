@@ -4,6 +4,7 @@
     import SaveIcon from "$lib/icons/save.svg";
     import NotificationsIcon from "$lib/icons/bell.svg";
     import UserIcon from "$lib/icons/user.svg";
+    import QRCodeIcon from "$lib/icons/qrcode.svg";
 </script>
 
 
@@ -20,8 +21,10 @@
 	<a href="/messages">
 		<img src={MessagesIcon} alt="Messages" />
 	</a>
+	<div class="center-icon">
+		<img src={QRCodeIcon} alt="Notifications" style="filter: invert(100%) contrast(100%)" />
+	</div>
 	<img src={SaveIcon} alt="Save" />
-	<img src={NotificationsIcon} alt="Notifications" />
 	<img src={UserIcon} alt="User" />
 </div>
 
@@ -31,7 +34,6 @@
 		font-size: 12px;
 		color: #8f8f8f;
 		padding-block: 2rem 8rem;
-		background-color: #f5f6f7;
 
 	}
 
@@ -53,6 +55,17 @@
             width: 24px;
             height: 24px;
             opacity: 0.5;
-        }
+		}
+		.center-icon {
+			background-color: #e12557;
+			border-radius: 100px;
+			border: 5px solid rgb(250, 212, 212);
+			padding: 10px;
+			color: #fff;
+			img {
+				opacity: 1;
+				scale: 1.2;
+			}
+		}
 	}
 </style>

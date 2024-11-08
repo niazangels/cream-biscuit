@@ -73,16 +73,16 @@
 				overflow: hidden;
 
 				&:nth-of-type(n + 1) {
-					background-color: #e5c890;
+					background-color: #F8D25C;
 				}
 				&:nth-of-type(n + 2) {
-					background-color: #a7c9a1;
+					background-color: #4ECDC4;
 				}
 				&:nth-of-type(n + 3) {
-					background-color: #babbf1;
+					background-color: #FB6376;
 				}
 				&:nth-of-type(n + 4) {
-					background-color: #e78284;
+					background-color: #9085D5;
 				}
 
 				.image {

@@ -13,7 +13,7 @@
 	<div class="card">
 		<div class="image">
 			<img
-				src={`https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=/${person.name}&scale=70&backgroundColor=F8D25C&mouth=concerned,default,disbelief,eating,grimace,serious,smile,tongue,twinkle`}
+				src={`https://api.dicebear.com/9.x/avataaars-neutral/svg?seed=/${person.name}&scale=70&backgroundColor=F8D25C,FB6376,4ECDC4,9085D5&mouth=concerned,default,disbelief,eating,grimace,serious,smile,tongue,twinkle`}
 				alt={person.name}
 				width={image_size}
 				height={image_size}
