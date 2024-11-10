@@ -4,15 +4,15 @@
 	import SimilarStartups from '$lib/SimilarStartups.svelte';
 	import StartupHeader from '$lib/StartupHeader.svelte';
 
-    import { onNavigate } from '$app/navigation';
-    import { invalidateAll } from '$app/navigation';
-	const { data } = $props();
-    const {startup, people, similar_startups, other_startups} = data;
+	export let data;
 
-    onNavigate(() => {
-        invalidateAll();
-    });
+	$: startup = data.startup;
+	$: people = data.people;
+	$: similar_startups = data.similar_startups;
+	$: other_startups = data.other_startups;
+
 </script>
+
 
 <StartupHeader 
 	ticket_num={startup.ticket_num}

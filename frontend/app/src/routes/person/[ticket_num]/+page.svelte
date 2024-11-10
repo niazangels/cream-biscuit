@@ -2,14 +2,19 @@
 	import StartupCard from '$lib/StartupCard.svelte';
 	import PersonCard from '$lib/PersonCard.svelte';
 	import PersonImage from '$lib/PersonImage.svelte';
+	import { page } from '$app/stores';
 
-	const { data } = $props();
-	const person = data.person;
-	const organization = data.organization;
-	const also_from_organization = data.also_from_organization;
-	const similar_people = data.similar_people;
+	export let data;
+
+	$: person = data.person;
+	$: organization = data.organization;
+	$: also_from_organization = data.also_from_organization;
+	$: similar_people = data.similar_people;
+
+	console.log($page);
 </script>
 
+{#key $page.params.ticket_num}
 <div class="card">
 	<div class="image">
 		<PersonImage {person} />
@@ -56,16 +61,7 @@
 	<p>No similar people found.</p>
 {/if}
 
-<!-- {JSON.stringify(person)} -->
-<!--
-<br />
-<br />
-<br />
-<hr />
-<br />
-
-{JSON.stringify(people)}
-{JSON.stringify(organization)} -->
+{/key}
 
 <style lang="scss">
 	.card {

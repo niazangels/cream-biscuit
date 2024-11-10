@@ -1,14 +1,11 @@
 <script>
 	import PersonImage from "./PersonImage.svelte";
+	import { goto, invalidateAll, onNavigate } from "$app/navigation";
+	import { onMount } from "svelte";
 
 	const { person } = $props();
-
-	// const person = {
-	// 	name: 'John_Doe',
-	// 	title: 'CEO',
-	// 	organization: 'Acme Inc.',
-	// };
 	const image_size = 60;
+
 </script>
 
 <a href={`/person/${person.ticket_num}`}>
