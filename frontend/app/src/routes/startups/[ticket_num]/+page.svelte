@@ -4,9 +4,14 @@
 	import SimilarStartups from '$lib/SimilarStartups.svelte';
 	import StartupHeader from '$lib/StartupHeader.svelte';
 
+    import { onNavigate } from '$app/navigation';
+    import { invalidateAll } from '$app/navigation';
 	const { data } = $props();
     const {startup, people, similar_startups, other_startups} = data;
 
+    onNavigate(() => {
+        invalidateAll();
+    });
 </script>
 
 <StartupHeader 
@@ -20,7 +25,11 @@
 
 <h2 class="section-header">About Company</h2>
 
+{#if startup.company_description}
 <p>{startup.company_description}</p>
+{:else}
+<p> -</p>
+{/if}
 
 {#if startup.product_name}
 	<h2 class="section-header">Product</h2>

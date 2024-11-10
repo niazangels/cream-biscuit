@@ -16,8 +16,12 @@
             <h2>{organization}</h2>
         </div>
         <div class="pills">
+            {#if sector}
             <Pill text={sector} />
+            {/if}
+            {#if technology}
             <Pill text={technology} />
+            {/if}
         </div>
     </div>
 

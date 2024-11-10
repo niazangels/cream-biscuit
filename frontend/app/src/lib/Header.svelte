@@ -1,7 +1,7 @@
 <script>
 	import IconBell from '$lib/icons/bell.svg';
 </script>
-
+	
 <header>
 	<a href="/">
 		<img src="/images/huddle_black.svg" class="logo" alt="Huddle" />

@@ -36,10 +36,16 @@
     .marquee {
   overflow: hidden;
   display: flex;
+  background: #222;
+  color: #dadada;
+  padding-block: 6px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
 .marquee span{
     white-space: nowrap;
-    opacity: .5;
+    text-transform: uppercase;
+    font-size: 1.2rem;
 }
 </style>

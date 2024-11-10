@@ -4,7 +4,6 @@
 	import IconizedButton from "$lib/IconizedButton.svelte";
 	import HugeBtn from "$lib/HugeBtn.svelte";
 	import QRCodeIcon from "$lib/icons/qrcode.svg";
-    import Essentials2 from "$lib/Essentials2.svelte";
 
 	import IconRightArrow from "$lib/icons/gradient/right-arrow.png";
     import SingleRowButton from "$lib/SingleRowButton.svelte";
@@ -19,16 +18,15 @@
 <h2 class="section-header">Essentials</h2>
 
 <EssentialsButtons />
-<!-- <Essentials2 /> -->
 
 <IconizedButton img='/images/icons/camp-b.png' text="Startups @ Huddle" label="Check out" href="/startups" />
 
 <h2 class="section-header">People</h2>
 <div class="two-col-grid">
+    <HugeBtn href="/person?filter=Attendees" text="All Attendees" icon="/images/icons/attendees.png" />
     <HugeBtn href="/person?filter=Investors" text="Investors" icon="/images/icons/investors.png" />
     <HugeBtn href="/person?filter=Mentors" text="Mentors" icon="/images/icons/mentors.png" />
     <HugeBtn href="/person?filter=Founders" text="Founders" icon="/images/icons/founders.png" />
-    <HugeBtn href="/person?filter=Organizers" text="Organizers" icon="/images/icons/organizers.png" />
 </div>
 
 <SingleRowButton text="See everyone" href="/person" kind="secondary" />

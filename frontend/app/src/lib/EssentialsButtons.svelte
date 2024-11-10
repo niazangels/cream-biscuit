@@ -20,7 +20,9 @@
             padding-block: 1.4rem;
             border-radius: 8px;
             min-height: 80px;
-            background-color: #dedede;
+            background-color: #f4f4f4;
+
+
             display: flex;
             align-items: center;
             justify-content: center;

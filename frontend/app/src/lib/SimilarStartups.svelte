@@ -1,5 +1,6 @@
 <script>
     import StartupImage from '$lib/StartupImage.svelte';
+    import { goto } from '$app/navigation';
     export let startups;
 
 </script>
@@ -8,7 +9,9 @@
 	<div class="wrapper">
         {#key startups}
         {#each startups as startup}
-            <div class="item">
+            <div class="item" onclick={() => {
+                goto(`/startups/${startup.ticket_num}`);
+            }}>
                 <div class="image">
                     <StartupImage name={startup.organization} />
                     
@@ -61,6 +64,7 @@
 				inline-size: 100%;
 				max-inline-size: 25rem;
 				aspect-ratio: 16 / 9;
+                cursor: pointer;
 
             }
 

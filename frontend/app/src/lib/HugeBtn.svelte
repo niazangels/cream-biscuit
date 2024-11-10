@@ -19,7 +19,7 @@
         align-items: center;
         justify-content: center;
         gap: 1rem;
-        background-color: #f3f3f3;
+        background-color: #f4f4f4;
         border-radius: 8px;
         height: 100px;  
         width: 100%;

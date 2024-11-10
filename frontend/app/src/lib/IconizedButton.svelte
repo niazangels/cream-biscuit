@@ -15,15 +15,12 @@
 <a {href}>
 	<div class="iconized-button">
 		<div class="content">
-			<span>{label}</span>
+			<span class="btn-text">{label}</span>
 			<h2>{text}</h2>
 		</div>
 		<img src={img} alt={text} />
-		<div>
-            <MarqueeText text={marquee_text} />
-		</div>
-		<div></div>
 	</div>
+	<MarqueeText text={marquee_text} />
 </a>
 
 <style lang="scss">
@@ -33,17 +30,17 @@
 
 		display: grid;
 		grid-template-columns: 80% 20%;
-		grid-template-rows: 1fr 20px;
+		// grid-template-rows: 1fr 20px;
         
 		border-radius: 8px;
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
 		padding: 2rem;
-		// background-color: #343434;
-		// color: #fff;
 
         background-color: #F8D25C;
         color: #000;
 
-		margin-block: 1rem;
+		margin-top: 1rem;
 
         h2{
             color: #2c2a2a;
