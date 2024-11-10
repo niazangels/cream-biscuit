@@ -9,8 +9,6 @@
     const shuffled_startups = huddle_startups.sort(() => Math.random() - 0.5);
     const marquee_text = shuffled_startups.map(startup => startup.organization).join('  ·  ');
     
-    console.log(marquee_text);
-
 	import MarqueeText from '$lib/MarqueeText.svelte';
 </script>
 

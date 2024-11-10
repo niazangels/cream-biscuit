@@ -20,12 +20,9 @@
         justify-content: center;
         gap: 1rem;
         background-color: #f3f3f3;
-        // border: 1px solid #eee;
         border-radius: 8px;
         height: 100px;  
         width: 100%;
-        // background-color: hsl(0, 0%, 32%);
-        // color: #fbfbfb;
 
         img{
             width: 56px;

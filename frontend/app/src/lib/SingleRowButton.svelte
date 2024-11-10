@@ -6,7 +6,7 @@
 
 
 <div class="single-row">
-    <a href={href} class={kind}>{text}</a>
+    <a href={href} class={`${kind} btn-text`}>{text}</a>
 </div>
 
 <style lang="scss">
@@ -19,7 +19,7 @@
     a{
         text-decoration: none;
         width: 100%;
-        padding: .5rem 0;
+        padding: .7rem 0;
         text-align: center;
         border-radius: 8px;
     }

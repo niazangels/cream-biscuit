@@ -1,24 +1,27 @@
 <script>
 	export let name 
 	export let description;
-	export let image = `https://picsum.photos/seed/${name}/80`;
 	export let technology;
 	export let domain;
     export let ticket_num
-	const image_size = 80;
+	import StartupImage from './StartupImage.svelte';
 </script>
 
 <a href={`/startups/${ticket_num}`}>
 	<div class="content">
 		<div class="image">
-		<img src={image} alt="Event Image" width={image_size} height={image_size}/>
+			<StartupImage name={name} />
 	</div>
 	<div class="info">
 		<h3>{name}</h3>
 		<p class="description">{description}</p>
 		<div class="pills">
-			<span class="pill">{technology}</span>
-			<span class="pill">{domain}</span>
+			{#if technology}	
+				<span class="pill">{technology}</span>
+			{/if}
+			{#if domain}
+				<span class="pill">{domain}</span>
+			{/if}
 		</div>
 	</div>
 </div>

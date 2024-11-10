@@ -31,7 +31,7 @@
     <HugeBtn href="/person?filter=Organizers" text="Organizers" icon="/images/icons/organizers.png" />
 </div>
 
-<SingleRowButton text="See all attendees" href="/person" kind="secondary" />
+<SingleRowButton text="See everyone" href="/person" kind="secondary" />
 
 <h2 class="section-header">Things to do today</h2>
 <div class="two-col-grid">

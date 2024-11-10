@@ -40,5 +40,6 @@
 
 .marquee span{
     white-space: nowrap;
+    opacity: .5;
 }
 </style>

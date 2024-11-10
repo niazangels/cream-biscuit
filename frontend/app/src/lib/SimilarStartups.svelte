@@ -1,24 +1,25 @@
 <script>
+    import StartupImage from '$lib/StartupImage.svelte';
     export let startups;
-    console.log(startups);
 
 </script>
 
 <div class="gallery">
 	<div class="wrapper">
-		{#each startups as startup}
-        <div class="item">
-            <!-- <a href={`/startups/${startup.ticket_num}`}> -->
-					<div class="image">
-						<img src="https://picsum.photos/80" alt="" />
-				</div>
+        {#key startups}
+        {#each startups as startup}
+            <div class="item">
+                <div class="image">
+                    <StartupImage name={startup.organization} />
+                    
+                </div>
 				<div class="info">
 					<h3>{startup.organization}</h3>
 					<p>{startup.company_detail}</p>
-					</div>
-                    <!-- </a> -->
 				</div>
-		{/each}
+			</div>
+            {/each}
+            {/key}
 	</div>
 </div>
 
@@ -87,13 +88,13 @@
 
 				.image {
 					margin-left: 1rem;
+                    
                     img{
                         border-radius: 8px;
                     }
 				}
 
 				.info {
-					// border: 1px solid red;
 					h3 {
 						font-size: 1.4rem;
 					}

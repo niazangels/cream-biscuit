@@ -1,7 +1,7 @@
 import HuddleStartups from '$lib/_data/huddle_startups'
 import HuddleEveryone from '$lib/_data/huddle_everyone'
 
-export async function load({fetch, params}) {
+export async function load({params}) {
 	let startup = HuddleStartups.filter((startup) => startup.ticket_num === params.ticket_num)[0];
 	let people = HuddleEveryone.filter((person) => person.organization === startup.organization);
 	
@@ -16,6 +16,8 @@ export async function load({fetch, params}) {
 		.filter(s => !similar_startups.includes(s))
 		.sort(() => Math.random() - 0.5)
 		.slice(0, 4);
+
+	console.log("Server side", {startup, people, similar_startups, other_startups});
 
 	return { startup, people, similar_startups, other_startups };
 }

@@ -1,29 +1,20 @@
 <script>
-	import StartupHeader from '$lib/StartupHeader.svelte';
 	import SingleRowButton from '$lib/SingleRowButton.svelte';
 	import PersonCard from '$lib/PersonCard.svelte';
 	import SimilarStartups from '$lib/SimilarStartups.svelte';
-	import StartupHeader2 from '$lib/StartupHeader2.svelte';
+	import StartupHeader from '$lib/StartupHeader.svelte';
 
 	const { data } = $props();
-	const startup = data.startup;
-	const people = data.people;
-	const similar_startups = data.similar_startups;
-	const other_startups = data.other_startups;
+    const {startup, people, similar_startups, other_startups} = data;
+
 </script>
 
-<StartupHeader2		ticket_num={startup.ticket_num}
-company_name={startup.organization}
-sector={startup.sector}
-technology={startup.technology}
- />
-<!-- 
-<StartupHeader
+<StartupHeader 
 	ticket_num={startup.ticket_num}
-	company_name={startup.organization}
+	organization={startup.organization}
 	sector={startup.sector}
 	technology={startup.technology}
-/> -->
+ />
 
 <SingleRowButton text="Website" href={startup.website} />
 
